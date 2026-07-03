@@ -7,10 +7,15 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Set your Instagram username
-instagram_username = 'jay860999'
+instagram_username = 'jaydendoesarts'
 
-# Initialize the WebDriver
-driver = webdriver.Chrome()
+# Configure Headless Mode
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("--window-size=1920,1080")  # Set a standard window size so elements still render properly
+
+# Initialize the WebDriver with options
+driver = webdriver.Chrome(options=options)
 
 try:
     print("Opening website...")
